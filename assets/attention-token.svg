@@ -20,11 +20,11 @@
   </defs>
 
   <text x="380" y="26" text-anchor="middle"
-    style="font-size:15px; font-weight:600; fill:#2C2C2A;">
+    style="font-size:15px; font-weight:600; fill:#C9C5BC;">
     Context helps the model interpret "it"
   </text>
   <text x="380" y="48" text-anchor="middle"
-    style="font-size:12px; fill:#6F6E68;">
+    style="font-size:12px; fill:#B4AEA3;">
     In "The animal did not cross the street because it was tired", the word "animal" gives the clearest clue.
   </text>
 
