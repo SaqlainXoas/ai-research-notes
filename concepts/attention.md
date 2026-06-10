@@ -7,6 +7,11 @@
 
 > Attention lets a model learn where to look, instead of forcing all information into one fixed representation.
 
+<p align="center">
+  <img src="../assets/attention-token.svg" alt="Context example showing how the word 'it' attends most strongly to 'animal' to clarify meaning" width="760">
+</p>
+<p align="center"><em>At a glance, this shows the real point of attention: context helps the model decide what a word refers to.</em></p>
+
 Attention is a mechanism that lets a neural network decide which parts of the input are most relevant when building a representation or producing an output.
 
 It became important in sequence-to-sequence learning because earlier RNN/LSTM encoder-decoder models compressed the full input into one fixed-size vector. Attention reduced this bottleneck by keeping all encoder states accessible and learning how much each one should matter at each decoding step.
@@ -238,6 +243,11 @@ A query matches against keys, and the corresponding values are returned accordin
 
 The Transformer uses scaled dot-product attention:
 
+<p align="center">
+  <img src="../assets/attention-sdp.svg" alt="Scaled dot-product attention pipeline from QK transpose through scaling, softmax, value mixing, and output" width="760">
+</p>
+<p align="center"><em>The formula looks dense at first, but the flow is simple: score, scale, normalize, then mix values.</em></p>
+
 ```text
 Attention(Q, K, V) = softmax(QKᵀ / √dₖ) V
 ```
@@ -324,6 +334,11 @@ tokens
 ```
 
 This made training more parallelizable and helped models capture relationships between distant tokens.
+
+<p align="center">
+  <img src="../assets/attention-block.svg" alt="Transformer encoder and decoder block layout with self-attention, feed-forward layers, and encoder-decoder attention" width="760">
+</p>
+<p align="center"><em>Once attention becomes the core building block, the architecture starts to look much more intuitive.</em></p>
 
 ---
 
