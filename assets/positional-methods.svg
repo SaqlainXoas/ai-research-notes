@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img"
+  style="font-family: ui-sans-serif, system-ui, sans-serif; background: transparent;">
+  <title>Three ways to add position information</title>
+  <desc>Three columns show additive positional methods combining a token embedding with a position vector, RoPE rotating query and key vectors, and ALiBi subtracting a distance penalty from an attention score.</desc>
+
+  <defs>
+    <style>
+      @keyframes rotate-query {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(14deg); }
+      }
+      @keyframes rotate-key {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(30deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .query-line, .key-line { animation: none !important; }
+      }
+      .query-line { animation: rotate-query 2.4s ease-in-out infinite alternate; transform-origin: 380px 193px; }
+      .key-line { animation: rotate-key 2.4s ease-in-out infinite alternate; transform-origin: 380px 193px; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+      markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle"
+    style="font-size:15px; font-weight:600; fill:#C9C5BC;">
+    Position information can enter the Transformer in different places
+  </text>
+  <text x="380" y="50" text-anchor="middle"
+    style="font-size:12px; fill:#B4AEA3;">
+    Add to embeddings, rotate queries and keys, or bias attention scores.
+  </text>
+
+  <g class="card c1">
+    <rect x="24" y="76" width="224" height="244" rx="12" fill="#F8F6F0" stroke="#D9D4C8" stroke-width="1"/>
+    <text x="136" y="103" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#26215C;">Sinusoidal / learned</text>
+    <text x="136" y="123" text-anchor="middle" style="font-size:11px; fill:#888780;">add to token embeddings</text>
+
+    <rect x="48" y="151" width="78" height="50" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.8"/>
+    <text x="87" y="172" text-anchor="middle" style="font-size:12px; font-weight:500; fill:#26215C;">token</text>
+    <text x="87" y="188" text-anchor="middle" style="font-size:10px; fill:#534AB7;">embedding</text>
+    <text x="137" y="181" text-anchor="middle" style="font-size:18px; fill:#888780;">+</text>
+    <rect x="150" y="151" width="74" height="50" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.8"/>
+    <text x="187" y="172" text-anchor="middle" style="font-size:12px; font-weight:500; fill:#633806;">position</text>
+    <text x="187" y="188" text-anchor="middle" style="font-size:10px; fill:#BA7517;">vector</text>
+    <line x1="136" y1="214" x2="136" y2="242" stroke="#B4B2A9" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <rect x="76" y="244" width="120" height="40" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+    <text x="136" y="268" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">combined input</text>
+    <text x="136" y="304" text-anchor="middle" style="font-size:10px; fill:#888780;">position enters before attention</text>
+  </g>
+
+  <g class="card c2">
+    <rect x="268" y="76" width="224" height="244" rx="12" fill="#F8F6F0" stroke="#D9D4C8" stroke-width="1"/>
+    <text x="380" y="103" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#0F6E56;">RoPE</text>
+    <text x="380" y="123" text-anchor="middle" style="font-size:11px; fill:#888780;">rotate queries and keys</text>
+
+    <circle cx="380" cy="193" r="56" fill="#F1EFE8" stroke="#D9D4C8" stroke-width="0.8"/>
+    <line x1="380" y1="193" x2="380" y2="143" stroke="#D9D4C8" stroke-width="1"/>
+    <line x1="330" y1="193" x2="430" y2="193" stroke="#D9D4C8" stroke-width="1"/>
+    <g class="query-line">
+      <line x1="380" y1="193" x2="420" y2="158" stroke="#534AB7" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+    </g>
+    <g class="key-line">
+      <line x1="380" y1="193" x2="425" y2="181" stroke="#BA7517" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+    </g>
+    <text x="350" y="151" style="font-size:11px; font-weight:600; fill:#534AB7;">Q</text>
+    <text x="433" y="185" style="font-size:11px; font-weight:600; fill:#BA7517;">K</text>
+    <text x="380" y="273" text-anchor="middle" style="font-size:11px; fill:#0F6E56;">angle depends on position</text>
+    <text x="380" y="304" text-anchor="middle" style="font-size:10px; fill:#888780;">position enters inside attention</text>
+  </g>
+
+  <g class="card c3">
+    <rect x="512" y="76" width="224" height="244" rx="12" fill="#F8F6F0" stroke="#D9D4C8" stroke-width="1"/>
+    <text x="624" y="103" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#993C1D;">ALiBi</text>
+    <text x="624" y="123" text-anchor="middle" style="font-size:11px; fill:#888780;">bias attention scores</text>
+
+    <rect x="538" y="151" width="72" height="50" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.8"/>
+    <text x="574" y="172" text-anchor="middle" style="font-size:12px; font-weight:500; fill:#26215C;">attention</text>
+    <text x="574" y="188" text-anchor="middle" style="font-size:10px; fill:#534AB7;">score</text>
+    <text x="623" y="181" text-anchor="middle" style="font-size:18px; fill:#888780;">−</text>
+    <rect x="640" y="151" width="72" height="50" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.8"/>
+    <text x="676" y="172" text-anchor="middle" style="font-size:12px; font-weight:500; fill:#4A1B0C;">distance</text>
+    <text x="676" y="188" text-anchor="middle" style="font-size:10px; fill:#993C1D;">penalty</text>
+    <line x1="624" y1="214" x2="624" y2="242" stroke="#B4B2A9" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <rect x="564" y="244" width="120" height="40" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+    <text x="624" y="268" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">final score</text>
+    <text x="624" y="304" text-anchor="middle" style="font-size:10px; fill:#888780;">farther tokens get more penalty</text>
+  </g>
+
+  <text x="380" y="347" text-anchor="middle" style="font-size:11px; fill:#888780; font-style:italic;">
+    Different method, same goal: let attention use token order and distance
+  </text>
+</svg>
