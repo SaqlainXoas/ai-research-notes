@@ -35,7 +35,8 @@ The goal is not to collect random resources. The goal is to write clear notes, c
 | Status | Item | Type |
 | --- | --- | --- |
 | In progress | [`concepts/attention.md`](concepts/attention.md) | Concept note |
-| Planned | `papers/nlp-llms/attention-is-all-you-need.md` | Paper review |
+| In progress | [`concepts/positional-encoding.md`](concepts/positional-encoding.md) | Concept note |
+| In progress | [`papers/nlp-llms/attention-is-all-you-need/`](papers/nlp-llms/attention-is-all-you-need/) | Paper review set |
 | Planned | `experiments/attention-from-scratch/` | Experiment |
 | Planned | `concepts/convolution.md` | Concept note |
 | Planned | `concepts/transformers.md` | Concept note |
@@ -61,7 +62,8 @@ ai-research-notes/
 ├── README.md
 ├── concepts/
 │   ├── README.md
-│   └── attention.md
+│   ├── attention.md
+│   └── positional-encoding.md
 ├── papers/
 │   └── README.md
 └── experiments/
