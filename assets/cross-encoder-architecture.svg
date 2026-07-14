@@ -4,6 +4,33 @@
   <desc>A BERT-style joined sequence contains query tokens river and bank followed by document tokens water, sandy, and edge. Curved paths show cross-boundary interaction inside a full self-attention Transformer. The pair is pooled and passed through a scoring head to produce one relevance score. The pair representation cannot be reused as a standalone document embedding.</desc>
 
   <defs>
+    <style>
+      @keyframes flow-cross {
+        to { stroke-dashoffset: -24; }
+      }
+      @keyframes token-pulse {
+        0%, 100% { stroke-width: 1; }
+        50% { stroke-width: 2.8; }
+      }
+      @keyframes score-pulse {
+        0%, 100% { stroke-width: 1.2; opacity: 1; }
+        50% { stroke-width: 2.8; opacity: 0.84; }
+      }
+      .flow-cross, .attention-flow {
+        stroke-dasharray: 7 5;
+        animation: flow-cross 1.25s linear infinite;
+      }
+      .attention-one { animation-duration: 1.35s; }
+      .attention-two { animation-duration: 1.05s; animation-delay: -0.4s; }
+      .attention-three { animation-duration: 1.7s; animation-delay: -0.8s; }
+      .query-node { animation: token-pulse 2.6s ease-in-out infinite; }
+      .score-card { animation: score-pulse 3s ease-in-out infinite 0.8s; }
+      @media (prefers-reduced-motion: reduce) {
+        .flow-cross, .attention-flow, .query-node, .score-card {
+          animation: none !important;
+        }
+      }
+    </style>
     <marker id="arrow-cross" viewBox="0 0 10 10" refX="8" refY="5"
       markerWidth="5" markerHeight="5" orient="auto-start-reverse">
       <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
@@ -55,7 +82,7 @@
   <text x="208" y="157" text-anchor="middle" style="font-size:10px; font-weight:500; fill:#534AB7;">query side</text>
   <text x="493" y="157" text-anchor="middle" style="font-size:10px; font-weight:500; fill:#0F6E56;">document side</text>
 
-  <line x1="380" y1="144" x2="380" y2="174" stroke="#8C897F"
+  <line class="flow-cross" x1="380" y1="144" x2="380" y2="174" stroke="#534AB7"
     stroke-width="1.2" marker-end="url(#arrow-cross)"/>
 
   <rect x="68" y="177" width="624" height="116" rx="11"
@@ -65,7 +92,7 @@
   <text x="380" y="220" text-anchor="middle"
     style="font-size:11px; fill:#534AB7;">full self-attention over the joined sequence</text>
 
-  <circle cx="221" cy="257" r="18" fill="#E7E5FA" stroke="#534AB7" stroke-width="1"/>
+  <circle class="query-node" cx="221" cy="257" r="18" fill="#E7E5FA" stroke="#534AB7" stroke-width="1"/>
   <text x="221" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#26215C;">bank</text>
   <circle cx="427" cy="257" r="18" fill="#D8EFE7" stroke="#0F6E56" stroke-width="1"/>
   <text x="427" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#04342C;">water</text>
@@ -74,23 +101,23 @@
   <circle cx="591" cy="257" r="18" fill="#D8EFE7" stroke="#0F6E56" stroke-width="1"/>
   <text x="591" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#04342C;">edge</text>
 
-  <path d="M239 253 C290 228 370 228 409 253" fill="none" stroke="#BA7517" stroke-width="2" marker-end="url(#arrow-cross)"/>
-  <path d="M239 260 C314 285 418 286 491 260" fill="none" stroke="#0F6E56" stroke-width="2.8" marker-end="url(#arrow-cross)"/>
-  <path d="M239 247 C335 217 500 217 573 247" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-cross)"/>
+  <path class="attention-flow attention-one" d="M239 253 C290 228 370 228 409 253" fill="none" stroke="#BA7517" stroke-width="2" marker-end="url(#arrow-cross)"/>
+  <path class="attention-flow attention-two" d="M239 260 C314 285 418 286 491 260" fill="none" stroke="#0F6E56" stroke-width="2.8" marker-end="url(#arrow-cross)"/>
+  <path class="attention-flow attention-three" d="M239 247 C335 217 500 217 573 247" fill="none" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arrow-cross)"/>
   <rect x="279" y="276" width="202" height="14" rx="5" fill="#EEEDFE"/>
   <text x="380" y="286" text-anchor="middle" style="font-size:9px; font-weight:500; fill:#0F6E56;">cross-boundary token interaction</text>
 
-  <line x1="380" y1="293" x2="380" y2="313" stroke="#8C897F"
+  <line class="flow-cross" x1="380" y1="293" x2="380" y2="313" stroke="#534AB7"
     stroke-width="1.2" marker-end="url(#arrow-cross)"/>
   <rect x="270" y="316" width="220" height="34" rx="8"
     fill="#F1EFE8" stroke="#BDB9AF" stroke-width="0.8"/>
   <text x="380" y="337" text-anchor="middle"
     style="font-size:11px; font-weight:500; fill:#4A4944;">pool pair state (often final [CLS])</text>
 
-  <line x1="380" y1="350" x2="380" y2="381" stroke="#8C897F"
+  <line class="flow-cross" x1="380" y1="350" x2="380" y2="381" stroke="#BA7517"
     stroke-width="1.2" marker-end="url(#arrow-cross)"/>
 
-  <rect x="270" y="384" width="220" height="52" rx="10"
+  <rect class="score-card" x="270" y="384" width="220" height="52" rx="10"
     fill="#FAEEDA" stroke="#BA7517" stroke-width="1.2"/>
   <text x="380" y="405" text-anchor="middle"
     style="font-size:12px; font-weight:600; fill:#633806;">scoring head</text>
