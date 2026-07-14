@@ -442,6 +442,8 @@ This is what allows the model to generate text left-to-right.
 
 - [`transformers.md`](transformers.md)
 - [`positional-encoding.md`](positional-encoding.md)
+- [`embedding-models-and-bi-encoders.md`](embedding-models-and-bi-encoders.md)
+- [`rerankers-and-cross-encoders.md`](rerankers-and-cross-encoders.md)
 - [`residual-connections.md`](residual-connections.md)
 
 ## Related Experiments

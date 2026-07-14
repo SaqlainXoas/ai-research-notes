@@ -36,6 +36,8 @@ The goal is not to collect random resources. The goal is to write clear notes, c
 | --- | --- | --- |
 | In progress | [`concepts/attention.md`](concepts/attention.md) | Concept note |
 | In progress | [`concepts/positional-encoding.md`](concepts/positional-encoding.md) | Concept note |
+| In progress | [`concepts/embedding-models-and-bi-encoders.md`](concepts/embedding-models-and-bi-encoders.md) | Concept note |
+| In progress | [`concepts/rerankers-and-cross-encoders.md`](concepts/rerankers-and-cross-encoders.md) | Concept note |
 | In progress | [`papers/nlp-llms/attention-is-all-you-need/`](papers/nlp-llms/attention-is-all-you-need/) | Paper review set |
 | Planned | `experiments/attention-from-scratch/` | Experiment |
 | Planned | `concepts/convolution.md` | Concept note |
@@ -63,7 +65,9 @@ ai-research-notes/
 ├── concepts/
 │   ├── README.md
 │   ├── attention.md
-│   └── positional-encoding.md
+│   ├── positional-encoding.md
+│   ├── embedding-models-and-bi-encoders.md
+│   └── rerankers-and-cross-encoders.md
 ├── papers/
 │   └── README.md
 └── experiments/

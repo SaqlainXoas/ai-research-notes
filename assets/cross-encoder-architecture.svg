@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img"
+  style="font-family: ui-sans-serif, system-ui, sans-serif; background: transparent;">
+  <title>Cross-encoder architecture: joint attention and a pairwise score</title>
+  <desc>A BERT-style joined sequence contains query tokens river and bank followed by document tokens water, sandy, and edge. Curved paths show cross-boundary interaction inside a full self-attention Transformer. The pair is pooled and passed through a scoring head to produce one relevance score. The pair representation cannot be reused as a standalone document embedding.</desc>
+
+  <defs>
+    <marker id="arrow-cross" viewBox="0 0 10 10" refX="8" refY="5"
+      markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="27" text-anchor="middle"
+    style="font-size:15px; font-weight:600; fill:#C9C5BC;">
+    Cross-encoder: contextualize the query and document together
+  </text>
+  <text x="380" y="49" text-anchor="middle"
+    style="font-size:12px; fill:#B4AEA3;">
+    One joined sequence produces one score for this specific text pair.
+  </text>
+
+  <rect x="28" y="70" width="704" height="295" rx="13"
+    fill="#F8F6F0" stroke="#D9D4C8" stroke-width="1"/>
+
+  <rect x="46" y="91" width="668" height="53" rx="10"
+    fill="#F1EFE8" stroke="#D9D4C8" stroke-width="0.8"/>
+  <text x="61" y="110" style="font-size:9px; font-weight:600; fill:#888780;">BERT-STYLE PAIR INPUT</text>
+
+  <rect x="66" y="115" width="54" height="27" rx="7"
+    fill="#E8E5DE" stroke="#A9A59B" stroke-width="0.7"/>
+  <text x="93" y="133" text-anchor="middle" style="font-size:10px; fill:#5F5E5A;">[CLS]</text>
+  <rect x="130" y="115" width="73" height="27" rx="7"
+    fill="#EEEDFE" stroke="#534AB7" stroke-width="0.8"/>
+  <text x="166.5" y="133" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#26215C;">river</text>
+  <rect x="213" y="115" width="73" height="27" rx="7"
+    fill="#EEEDFE" stroke="#534AB7" stroke-width="0.8"/>
+  <text x="249.5" y="133" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#26215C;">bank</text>
+  <rect x="296" y="115" width="54" height="27" rx="7"
+    fill="#E8E5DE" stroke="#A9A59B" stroke-width="0.7"/>
+  <text x="323" y="133" text-anchor="middle" style="font-size:10px; fill:#5F5E5A;">[SEP]</text>
+  <rect x="360" y="115" width="73" height="27" rx="7"
+    fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="396.5" y="133" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">water</text>
+  <rect x="443" y="115" width="73" height="27" rx="7"
+    fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="479.5" y="133" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">sandy</text>
+  <rect x="526" y="115" width="73" height="27" rx="7"
+    fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="562.5" y="133" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">edge</text>
+  <rect x="609" y="115" width="54" height="27" rx="7"
+    fill="#E8E5DE" stroke="#A9A59B" stroke-width="0.7"/>
+  <text x="636" y="133" text-anchor="middle" style="font-size:10px; fill:#5F5E5A;">[SEP]</text>
+
+  <text x="208" y="157" text-anchor="middle" style="font-size:10px; font-weight:500; fill:#534AB7;">query side</text>
+  <text x="493" y="157" text-anchor="middle" style="font-size:10px; font-weight:500; fill:#0F6E56;">document side</text>
+
+  <line x1="380" y1="144" x2="380" y2="174" stroke="#8C897F"
+    stroke-width="1.2" marker-end="url(#arrow-cross)"/>
+
+  <rect x="68" y="177" width="624" height="116" rx="11"
+    fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="380" y="201" text-anchor="middle"
+    style="font-size:13px; font-weight:600; fill:#26215C;">Cross-encoder Transformer</text>
+  <text x="380" y="220" text-anchor="middle"
+    style="font-size:11px; fill:#534AB7;">full self-attention over the joined sequence</text>
+
+  <circle cx="221" cy="257" r="18" fill="#E7E5FA" stroke="#534AB7" stroke-width="1"/>
+  <text x="221" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#26215C;">bank</text>
+  <circle cx="427" cy="257" r="18" fill="#D8EFE7" stroke="#0F6E56" stroke-width="1"/>
+  <text x="427" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#04342C;">water</text>
+  <circle cx="509" cy="257" r="18" fill="#D8EFE7" stroke="#0F6E56" stroke-width="1"/>
+  <text x="509" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#04342C;">sandy</text>
+  <circle cx="591" cy="257" r="18" fill="#D8EFE7" stroke="#0F6E56" stroke-width="1"/>
+  <text x="591" y="261" text-anchor="middle" style="font-size:10px; font-weight:600; fill:#04342C;">edge</text>
+
+  <path d="M239 253 C290 228 370 228 409 253" fill="none" stroke="#BA7517" stroke-width="2" marker-end="url(#arrow-cross)"/>
+  <path d="M239 260 C314 285 418 286 491 260" fill="none" stroke="#0F6E56" stroke-width="2.8" marker-end="url(#arrow-cross)"/>
+  <path d="M239 247 C335 217 500 217 573 247" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-cross)"/>
+  <rect x="279" y="276" width="202" height="14" rx="5" fill="#EEEDFE"/>
+  <text x="380" y="286" text-anchor="middle" style="font-size:9px; font-weight:500; fill:#0F6E56;">cross-boundary token interaction</text>
+
+  <line x1="380" y1="293" x2="380" y2="313" stroke="#8C897F"
+    stroke-width="1.2" marker-end="url(#arrow-cross)"/>
+  <rect x="270" y="316" width="220" height="34" rx="8"
+    fill="#F1EFE8" stroke="#BDB9AF" stroke-width="0.8"/>
+  <text x="380" y="337" text-anchor="middle"
+    style="font-size:11px; font-weight:500; fill:#4A4944;">pool pair state (often final [CLS])</text>
+
+  <line x1="380" y1="350" x2="380" y2="381" stroke="#8C897F"
+    stroke-width="1.2" marker-end="url(#arrow-cross)"/>
+
+  <rect x="270" y="384" width="220" height="52" rx="10"
+    fill="#FAEEDA" stroke="#BA7517" stroke-width="1.2"/>
+  <text x="380" y="405" text-anchor="middle"
+    style="font-size:12px; font-weight:600; fill:#633806;">scoring head</text>
+  <text x="380" y="423" text-anchor="middle"
+    style="font-size:11px; fill:#854F0B;">one relevance score for this pair</text>
+
+  <rect x="48" y="393" width="174" height="33" rx="8"
+    fill="#FAECE7" stroke="#993C1D" stroke-width="0.8"/>
+  <text x="135" y="407" text-anchor="middle"
+    style="font-size:9px; font-weight:600; fill:#4A1B0C;">PAIR REPRESENTATION</text>
+  <text x="135" y="419" text-anchor="middle"
+    style="font-size:9px; fill:#993C1D;">depends on both input texts</text>
+  <line x1="222" y1="409" x2="266" y2="409" stroke="#993C1D" stroke-width="1" marker-end="url(#arrow-cross)"/>
+
+  <rect x="538" y="393" width="174" height="33" rx="8"
+    fill="#F1EFE8" stroke="#BDB9AF" stroke-width="0.8"/>
+  <text x="625" y="407" text-anchor="middle"
+    style="font-size:9px; font-weight:600; fill:#5F5E5A;">NEW PAIRING, NEW STATE</text>
+  <text x="625" y="419" text-anchor="middle"
+    style="font-size:9px; fill:#888780;">no fixed document vector</text>
+  <line x1="494" y1="409" x2="534" y2="409" stroke="#8C897F" stroke-width="1" marker-end="url(#arrow-cross)"/>
+
+  <text x="380" y="453" text-anchor="middle"
+    style="font-size:10px; fill:#888780; font-style:italic;">
+    Special tokens and pooling vary by model; joint query-document encoding is the defining feature.
+  </text>
+</svg>
