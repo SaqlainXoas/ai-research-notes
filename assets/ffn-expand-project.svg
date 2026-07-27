@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" role="img" style="font-family: ui-sans-serif, system-ui, sans-serif;">
+  <title>A Transformer feed-forward network expands and projects one token representation</title>
+  <desc>One token representation flows through d model, a first linear layer, a wider d ff hidden representation, an activation, a second linear layer, and back to d model. The diagram labels 512 to 2048 to 512 as the original Transformer base-model example.</desc>
+  <defs>
+    <marker id="arrow-ffn-shape" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="434" rx="18" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="1.2"/>
+  <text x="440" y="48" text-anchor="middle" style="font-size:18px; font-weight:700; fill:#24292F;">An FFN expands one token's features, then projects them back</text>
+  <text x="440" y="72" text-anchor="middle" style="font-size:13px; fill:#57606A;">This is one token path. The same path is applied separately at every position.</text>
+
+  <rect x="218" y="97" width="444" height="34" rx="17" fill="#FFF0EB" stroke="#F2C6B6" stroke-width="1"/>
+  <text x="440" y="119" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#8C2D12;">ORIGINAL TRANSFORMER BASE-MODEL EXAMPLE: 512 → 2048 → 512</text>
+
+  <text x="104" y="168" text-anchor="middle" style="font-size:11px; font-weight:700; fill:#57606A; letter-spacing:.5px;">INPUT</text>
+  <text x="298" y="168" text-anchor="middle" style="font-size:11px; font-weight:700; fill:#5A32A3; letter-spacing:.5px;">EXPAND</text>
+  <text x="440" y="168" text-anchor="middle" style="font-size:11px; font-weight:700; fill:#B54708; letter-spacing:.5px;">NONLINEARITY</text>
+  <text x="585" y="168" text-anchor="middle" style="font-size:11px; font-weight:700; fill:#5A32A3; letter-spacing:.5px;">PROJECT</text>
+  <text x="776" y="168" text-anchor="middle" style="font-size:11px; font-weight:700; fill:#075B4A; letter-spacing:.5px;">OUTPUT</text>
+
+  <rect x="45" y="195" width="118" height="111" rx="14" fill="#F6F8FA" stroke="#8C959F" stroke-width="1.2"/>
+  <text x="104" y="229" text-anchor="middle" style="font-size:15px; font-weight:700; fill:#24292F;">Token x</text>
+  <text x="104" y="255" text-anchor="middle" style="font-size:13px; fill:#57606A;">d_model</text>
+  <text x="104" y="280" text-anchor="middle" style="font-size:12px; fill:#57606A;">input features</text>
+  <path d="M163 251 H204" fill="none" stroke="#57606A" stroke-width="1.8" marker-end="url(#arrow-ffn-shape)"/>
+
+  <rect x="212" y="205" width="171" height="91" rx="14" fill="#F0EAFF" stroke="#5A32A3" stroke-width="1.3"/>
+  <text x="298" y="237" text-anchor="middle" style="font-size:15px; font-weight:700; fill:#2D1B54;">Linear 1</text>
+  <text x="298" y="261" text-anchor="middle" style="font-size:12px; fill:#5A32A3;">xW₁ + b₁</text>
+  <text x="298" y="280" text-anchor="middle" style="font-size:11px; fill:#5A32A3;">d_model → d_ff</text>
+  <path d="M383 251 H405" fill="none" stroke="#5A32A3" stroke-width="1.8" marker-end="url(#arrow-ffn-shape)"/>
+
+  <rect x="413" y="186" width="55" height="130" rx="14" fill="#FAEEDA" stroke="#BA7517" stroke-width="1.3"/>
+  <text x="440" y="234" text-anchor="middle" style="font-size:14px; font-weight:700; fill:#633806;">ReLU</text>
+  <text x="440" y="257" text-anchor="middle" style="font-size:11px; fill:#854F0B;">in the</text>
+  <text x="440" y="274" text-anchor="middle" style="font-size:11px; fill:#854F0B;">original</text>
+  <text x="440" y="291" text-anchor="middle" style="font-size:11px; fill:#854F0B;">paper</text>
+  <path d="M468 251 H497" fill="none" stroke="#BA7517" stroke-width="1.8" marker-end="url(#arrow-ffn-shape)"/>
+
+  <rect x="505" y="205" width="161" height="91" rx="14" fill="#F0EAFF" stroke="#5A32A3" stroke-width="1.3"/>
+  <text x="585" y="237" text-anchor="middle" style="font-size:15px; font-weight:700; fill:#2D1B54;">Linear 2</text>
+  <text x="585" y="261" text-anchor="middle" style="font-size:12px; fill:#5A32A3;">hW₂ + b₂</text>
+  <text x="585" y="280" text-anchor="middle" style="font-size:11px; fill:#5A32A3;">d_ff → d_model</text>
+  <path d="M666 251 H707" fill="none" stroke="#5A32A3" stroke-width="1.8" marker-end="url(#arrow-ffn-shape)"/>
+
+  <rect x="715" y="195" width="118" height="111" rx="14" fill="#E6F6F0" stroke="#087660" stroke-width="1.2"/>
+  <text x="774" y="229" text-anchor="middle" style="font-size:15px; font-weight:700; fill:#075B4A;">Token x′</text>
+  <text x="774" y="255" text-anchor="middle" style="font-size:13px; fill:#075B4A;">d_model</text>
+  <text x="774" y="280" text-anchor="middle" style="font-size:12px; fill:#075B4A;">output features</text>
+
+  <rect x="131" y="351" width="618" height="52" rx="12" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1"/>
+  <text x="440" y="373" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#24292F;">Returning to d_model keeps the FFN output compatible with its residual path.</text>
+  <text x="440" y="391" text-anchor="middle" style="font-size:11px; fill:#57606A;">The wider d_ff middle is internal workspace; its size varies across Transformer families.</text>
+</svg>
