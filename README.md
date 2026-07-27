@@ -25,6 +25,7 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 - [Layer normalization](concepts/layer-normalization.md) — how each token representation is normalized across its hidden features.
 - [Feed-forward networks](concepts/feed-forward-networks.md) — how Transformer blocks transform each token after attention mixes context.
 - [Attention Is All You Need](papers/nlp-llms/attention-is-all-you-need/) — a structured study of the original Transformer paper.
+- [Attention from scratch](experiments/attention-from-scratch/) — a runnable PyTorch walkthrough of Q/K/V projections, scaling, causal masking, and multi-head attention.
 
 ### Representation learning and neural retrieval
 
@@ -43,7 +44,7 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 
 ## Status
 
-The Transformer and neural-retrieval foundations are documented. The experiments directory is intentionally a starting point: new experiments will be added only when they address a clear question from these notes.
+The Transformer and neural-retrieval foundations are documented. The first focused experiment, [Attention from scratch](experiments/attention-from-scratch/), turns the attention equation into reproducible PyTorch code and visual checks. Future experiments will be added only when they address a clear question from these notes.
 
 ---
 

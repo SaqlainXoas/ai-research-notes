@@ -148,3 +148,4 @@ That is why long-context and efficient-attention methods became important follow
 
 - [`Attention`](../../../concepts/attention.md)
 - [`Transformers`](../../../concepts/transformers.md)
+- [`Attention from scratch`](../../../experiments/attention-from-scratch/) — a runnable inspection of the equation, scaling, masking, and multi-head shapes.

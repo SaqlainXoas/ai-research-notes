@@ -290,7 +290,7 @@ Specific models vary the encoder/decoder structure, positional method, normaliza
 
 ## Questions Worth Testing
 
-- How does scaled attention change as the query/key dimension grows?
+- How does scaled attention change as the query/key dimension grows? See [`Attention from scratch`](../experiments/attention-from-scratch/) for a small reproducible simulation.
 - Which positional methods best preserve order learning beyond the lengths seen during training?
 - How does LayerNorm placement affect training stability in a small Transformer?
 

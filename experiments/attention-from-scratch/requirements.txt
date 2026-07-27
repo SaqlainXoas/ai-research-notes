@@ -1,0 +1,4 @@
+torch>=2.4
+matplotlib>=3.9
+ipykernel>=6.29
+nbclient>=0.10

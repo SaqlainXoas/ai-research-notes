@@ -448,6 +448,10 @@ This is what allows the model to generate text left-to-right.
 - [`layer-normalization.md`](layer-normalization.md)
 - [`feed-forward-networks.md`](feed-forward-networks.md)
 
+## Hands-On Experiment
+
+- [`Attention from scratch`](../experiments/attention-from-scratch/) — implements scaled dot-product attention, scaling comparisons, causal masking, and multi-head recombination with small synthetic tensors.
+
 ---
 
 [![Home](https://img.shields.io/badge/Home-README-0f172a?style=flat-square\&logo=github\&logoColor=white)](../README.md)
