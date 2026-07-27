@@ -59,13 +59,14 @@ class TinyTransformerClassifier(nn.Module):
     def __init__(self, vocab_size, seq_len, d_model, num_heads, d_ff, num_classes, use_positions):
         super().__init__()
         self.token_embedding = nn.Embedding(vocab_size, d_model)
-        self.position_embedding = nn.Embedding(seq_len, d_model) if use_positions else None
+        self.position_embedding = nn.Embedding(seq_len, d_model)
+        self.use_positions = use_positions
         self.encoder_block = TransformerEncoderBlock(d_model, num_heads, d_ff)
         self.classifier = nn.Linear(d_model, num_classes)
 
     def embed(self, token_ids):
         embeddings = self.token_embedding(token_ids)
-        if self.position_embedding is not None:
+        if self.use_positions:
             positions = torch.arange(token_ids.size(1), device=token_ids.device)
             embeddings = embeddings + self.position_embedding(positions)
         return embeddings
