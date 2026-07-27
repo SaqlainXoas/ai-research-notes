@@ -19,7 +19,7 @@ The notebook uses 1,000 seeded examples with an 800/200 train/validation split, 
 
 ## Observed results
 
-In the recorded deterministic run, validation accuracy was `0.680` after epoch 1 and reached `1.000` by epoch 5, remaining there through epoch 30. Final validation loss was `0.0002`, and all 200 validation examples were classified correctly. The notebook's prediction table therefore shows correct examples and explicitly reports that no incorrect validation rows were available.
+In the recorded deterministic run, validation accuracy was `0.680` after epoch 1 and reached `1.000` by epoch 5, remaining there through epoch 30. Final validation loss was `0.0002`.
 
 ### How to read the figure
 
