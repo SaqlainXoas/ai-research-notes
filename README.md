@@ -32,6 +32,7 @@ The current work follows three connected tracks:
 - [Embedding models and bi-encoders](concepts/embedding-models-and-bi-encoders.md) — reusable text vectors for retrieval.
 - [Contrastive learning](concepts/contrastive-learning.md) — how positive and negative pairs shape a useful embedding space.
 - [Rerankers and cross-encoders](concepts/rerankers-and-cross-encoders.md) — joint pairwise scoring for higher-precision ranking.
+- [Sentence-BERT](papers/nlp-llms/sentence-bert/) — an early foundational architecture that made BERT-style encoders practical for reusable semantic-search embeddings; it complements rather than replaces cross-encoder scoring.
 
 ## Repository Map
 
@@ -44,7 +45,7 @@ The current work follows three connected tracks:
 
 ## Status
 
-The Transformer and neural-retrieval foundations are documented. The focused experiments move from [attention mechanics](experiments/attention-from-scratch/) to a complete [tiny encoder-only classifier](experiments/tiny-transformer/), then use a [positional-information ablation](experiments/positional-information/) to test one component under controlled conditions. Future experiments will be added only when they address a clear question from these notes.
+The Transformer and neural-retrieval foundations are documented. The focused experiments move from [attention mechanics](experiments/attention-from-scratch/) to a complete [tiny encoder-only classifier](experiments/tiny-transformer/), then use a [positional-information ablation](experiments/positional-information/) to test one component under controlled conditions. The [Sentence-BERT study](papers/nlp-llms/sentence-bert/) is the bridge from that encoder work to reusable representations; the next retrieval task will examine bi-encoder retrieval with cross-encoder reranking. Future experiments will be added only when they address a clear question from these notes.
 
 ---
 

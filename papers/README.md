@@ -9,3 +9,4 @@ Each paper entry should capture the problem, method, results, strengths, limitat
 | Paper | Focus |
 | --- | --- |
 | [`Attention Is All You Need`](nlp-llms/attention-is-all-you-need/) | The original Transformer architecture, attention mechanics, and its major model-family descendants |
+| [`Sentence-BERT`](nlp-llms/sentence-bert/) | How shared BERT encoders, pooling, and task-specific fine-tuning create reusable sentence embeddings for similarity search |
