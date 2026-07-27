@@ -19,11 +19,11 @@ tokens → token embeddings + positional embeddings → one encoder block
 
 Read the diagram from left to right: the encoder block turns every token into a contextual representation, while the final `[CLS]` vector is used for the sequence-level prediction.
 
-The notebook uses 1,000 seeded examples with an 800/200 train/validation split, a `d_model` of 32, four attention heads, and one `32 → 64 → 32` FFN. It has no test set, padding, mask, or ablation: all sequences have the same length and encoder attention can use the whole input.
+The notebook selects 1,000 unique seeded examples from the finite valid-sequence space, shuffles them deterministically, and uses an 800/200 train/validation split. This keeps the splits disjoint. The model has a `d_model` of 32, four attention heads, and one `32 → 64 → 32` FFN. It has no test set, padding, mask, or ablation: all sequences have the same length and encoder attention can use the whole input.
 
 ## Observed results
 
-In the recorded deterministic run, validation accuracy was `0.680` after epoch 1 and reached `1.000` by epoch 5, remaining there through epoch 30. Final validation loss was `0.0002`.
+In the recorded deterministic run, validation accuracy was `0.540` after epoch 1 and reached `1.000` by epoch 5, remaining there through epoch 30. Final validation loss was `0.0002`.
 
 ### How to read the figure
 
