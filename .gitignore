@@ -1,3 +1,10 @@
 .DS_Store
 docs/
 AGENTS.md
+
+# Local Python and notebook execution artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*-preview.html
