@@ -95,22 +95,10 @@ After several blocks, the representation for a word can be influenced by other r
 
 A block is the repeated unit that makes a Transformer deep. The exact order differs across models, but this is the broad idea behind the original design:
 
-```text
-input representations
-        │
-        ▼
-    Attention
-        │
-   residual path + normalization
-        │
-        ▼
-       FFN
-        │
-   residual path + normalization
-        │
-        ▼
-updated representations
-```
+<p align="center">
+  <img src="../assets/transformer-block-flow.svg" alt="Original-style Transformer block with attention and feed-forward sublayers, each surrounded by a residual path and followed by layer normalization" width="760">
+</p>
+<p align="center"><em>Attention mixes information across positions; the FFN transforms each position, while residual paths preserve a direct route through both sublayers.</em></p>
 
 ### Attention: mix information across positions
 
@@ -136,13 +124,13 @@ A residual path adds a block's input back to its transformation:
 output = input + transformation(input)
 ```
 
-This gives information and gradients a more direct route through a stack of many blocks. See the planned deeper dive `residual-connections.md` for the intuition and training role.
+This gives information and gradients a more direct route through a stack of many blocks. See [`residual-connections.md`](residual-connections.md) for the intuition and training role.
 
 ### Layer normalization: keep stacked computation manageable
 
 Layer normalization helps keep activation scales and training behavior more stable as blocks are stacked. The original Transformer applied it after each residual addition; many later architectures use a different arrangement, often called Pre-LN.
 
-The placement matters for training, but it is a separate topic. See the planned deeper dive `layer-normalization.md`.
+The placement matters for training, but it is a separate topic. See [`layer-normalization.md`](layer-normalization.md).
 
 The FFN design is also intentionally kept high-level here; the planned `feed-forward-networks.md` will cover it in more detail.
 
@@ -152,11 +140,10 @@ The FFN design is also intentionally kept high-level here; the planned `feed-for
 
 Attention can compare token content, but by itself it does not provide the sequence order that recurrence naturally carries.
 
-```text
-The dog chased the cat.
-
-The cat chased the dog.
-```
+<p align="center">
+  <img src="../assets/positional-order.svg" alt="The same main words form different meanings when dog and cat exchange positions" width="760">
+</p>
+<p align="center"><em>Token identity is not enough: changing the order changes who performs the action.</em></p>
 
 The words are similar, but their order changes who chased whom. Transformers therefore add position information to token representations.
 
@@ -168,27 +155,12 @@ The original Transformer used fixed sinusoidal positional encodings. Later model
 
 It helps to separate the original paper from the larger Transformer family. *Attention Is All You Need* introduced an **encoder-decoder Transformer** for sequence-to-sequence tasks such as machine translation.
 
-```text
-source sequence
-      │
-      ▼
-   encoder
-      │ contextual representation of the source
-      ▼
-   decoder
-      │
-      ▼
-target sequence
-```
+<p align="center">
+  <img src="../assets/original-transformer-flow.svg" alt="Original Transformer flow with a source encoder, a causal target decoder, and cross-attention from encoder states into the decoder" width="760">
+</p>
+<p align="center"><em>The encoder represents the source sequence; the decoder uses those representations while generating the target sequence.</em></p>
 
 The encoder reads the source tokens with self-attention. The decoder generates target tokens and uses two kinds of information: earlier target tokens through masked self-attention, and the encoder's source representations through encoder-decoder attention (also called cross-attention).
-
-```text
-encoder: input → self-attention → FFN → contextual source states
-
-decoder: earlier target tokens → masked self-attention
-         → cross-attention to encoder states → FFN → next-token prediction
-```
 
 The original base model had six encoder layers, six decoder layers, `d_model = 512`, eight attention heads, and `d_ff = 2048`. These are historical paper settings, not requirements for calling a model a Transformer. For the complete original layout, see [`architecture.md`](../papers/nlp-llms/attention-is-all-you-need/architecture.md).
 
@@ -315,8 +287,6 @@ Specific models vary the encoder/decoder structure, positional method, normaliza
 
 Planned deeper dives (pages not created yet):
 
-- `residual-connections.md`
-- `layer-normalization.md`
 - `feed-forward-networks.md`
 
 ## Questions Worth Testing

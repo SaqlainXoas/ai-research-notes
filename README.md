@@ -22,6 +22,7 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 - [Attention](concepts/attention.md) — how token representations gather information from other tokens.
 - [Positional encoding](concepts/positional-encoding.md) — how attention-based models represent order.
 - [Residual connections](concepts/residual-connections.md) — why shortcut paths make deep networks easier to optimize.
+- [Layer normalization](concepts/layer-normalization.md) — how each token representation is normalized across its hidden features.
 - [Attention Is All You Need](papers/nlp-llms/attention-is-all-you-need/) — a structured study of the original Transformer paper.
 
 ### Representation learning and neural retrieval
