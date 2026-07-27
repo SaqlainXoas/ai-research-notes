@@ -15,6 +15,10 @@ tokens → token embeddings + positional embeddings → one encoder block
 → final [CLS] representation → classifier → prediction
 ```
 
+![Tiny Transformer model flow](figures/architecture-flow.svg)
+
+Read the diagram from left to right: the encoder block turns every token into a contextual representation, while the final `[CLS]` vector is used for the sequence-level prediction.
+
 The notebook uses 1,000 seeded examples with an 800/200 train/validation split, a `d_model` of 32, four attention heads, and one `32 → 64 → 32` FFN. It has no test set, padding, mask, or ablation: all sequences have the same length and encoder attention can use the whole input.
 
 ## Observed results
