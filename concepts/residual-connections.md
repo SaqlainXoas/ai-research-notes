@@ -260,6 +260,7 @@ The learned transformation can be a convolution, attention operation, MLP/FFN, o
 
 - [`transformers.md`](transformers.md)
 - [`attention.md`](attention.md)
+- [`layer-normalization.md`](layer-normalization.md)
 - [`architecture.md`](../papers/nlp-llms/attention-is-all-you-need/architecture.md) — detailed original-paper architecture
 
 ---

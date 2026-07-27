@@ -166,6 +166,7 @@ It also does not make every hidden vector identical. After feature-wise normaliz
 - [`transformers.md`](transformers.md)
 - [`residual-connections.md`](residual-connections.md)
 - [`attention.md`](attention.md)
+- [`feed-forward-networks.md`](feed-forward-networks.md)
 - [`architecture.md`](../papers/nlp-llms/attention-is-all-you-need/architecture.md) — detailed original-paper architecture
 
 ---

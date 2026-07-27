@@ -23,11 +23,13 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 - [Positional encoding](concepts/positional-encoding.md) — how attention-based models represent order.
 - [Residual connections](concepts/residual-connections.md) — why shortcut paths make deep networks easier to optimize.
 - [Layer normalization](concepts/layer-normalization.md) — how each token representation is normalized across its hidden features.
+- [Feed-forward networks](concepts/feed-forward-networks.md) — how Transformer blocks transform each token after attention mixes context.
 - [Attention Is All You Need](papers/nlp-llms/attention-is-all-you-need/) — a structured study of the original Transformer paper.
 
 ### Representation learning and neural retrieval
 
 - [Embedding models and bi-encoders](concepts/embedding-models-and-bi-encoders.md) — reusable text vectors for retrieval.
+- [Contrastive learning](concepts/contrastive-learning.md) — how positive and negative pairs shape a useful embedding space.
 - [Rerankers and cross-encoders](concepts/rerankers-and-cross-encoders.md) — joint pairwise scoring for higher-precision ranking.
 
 ## Repository Map
@@ -41,7 +43,7 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 
 ## Status
 
-The Transformer and neural-retrieval foundations are actively documented. The experiments directory is intentionally a starting point: new experiments will be added only when they address a clear question from these notes.
+The Transformer and neural-retrieval foundations are documented. The experiments directory is intentionally a starting point: new experiments will be added only when they address a clear question from these notes.
 
 ---
 

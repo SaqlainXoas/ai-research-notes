@@ -19,7 +19,7 @@
 | **Main task** | Machine translation: English -> German and English -> French |
 | **Core idea** | Replace recurrence and convolution as the main sequence-processing backbone with stacked attention-based blocks |
 | **Key components** | Multi-head attention, feed-forward networks, positional encoding, residual connections, layer normalization |
-| **Related concept** | [`Attention`](../../../concepts/attention.md) |
+| **Related concepts** | [`Transformers`](../../../concepts/transformers.md), [`Attention`](../../../concepts/attention.md), [`Positional Encoding`](../../../concepts/positional-encoding.md), [`Residual Connections`](../../../concepts/residual-connections.md), [`Layer Normalization`](../../../concepts/layer-normalization.md), [`Feed-Forward Networks`](../../../concepts/feed-forward-networks.md) |
 
 ## The One-Line Idea
 

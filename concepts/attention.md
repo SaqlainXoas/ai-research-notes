@@ -445,11 +445,8 @@ This is what allows the model to generate text left-to-right.
 - [`embedding-models-and-bi-encoders.md`](embedding-models-and-bi-encoders.md)
 - [`rerankers-and-cross-encoders.md`](rerankers-and-cross-encoders.md)
 - [`residual-connections.md`](residual-connections.md)
-
-## Related Experiments
-
-- [`attention-from-scratch/`](../experiments/attention-from-scratch/)
-- [`mini-transformer-block/`](../experiments/mini-transformer-block/)
+- [`layer-normalization.md`](layer-normalization.md)
+- [`feed-forward-networks.md`](feed-forward-networks.md)
 
 ---
 

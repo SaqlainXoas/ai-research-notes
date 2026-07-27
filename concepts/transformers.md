@@ -283,6 +283,8 @@ Specific models vary the encoder/decoder structure, positional method, normaliza
 
 - [`attention.md`](attention.md)
 - [`positional-encoding.md`](positional-encoding.md)
+- [`residual-connections.md`](residual-connections.md)
+- [`layer-normalization.md`](layer-normalization.md)
 - [`feed-forward-networks.md`](feed-forward-networks.md)
 - [`architecture.md`](../papers/nlp-llms/attention-is-all-you-need/architecture.md) — detailed original-paper architecture
 
