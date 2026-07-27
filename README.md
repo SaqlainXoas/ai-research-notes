@@ -4,15 +4,13 @@
 ![Style](https://img.shields.io/badge/Style-Concept--First-2563eb)
 ![Status](https://img.shields.io/badge/Status-Active-16a34a)
 
-A focused public notebook for understanding modern machine learning through connected concept notes, paper studies, and reproducible experiments.
+A personal notebook for exploring modern machine learning through concept notes, paper studies, and reproducible experiments.
 
 The current work follows three connected tracks:
 
 1. Transformer foundations
 2. Representation learning and neural retrieval
 3. ML generalization, calibration, and reliability
-
-The aim is depth over coverage: explain a concept clearly, connect it to the relevant research, and use a small experiment when implementation can answer a concrete question.
 
 ## Start Here
 
