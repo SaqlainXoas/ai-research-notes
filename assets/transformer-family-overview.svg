@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" role="img"
+  style="font-family: ui-sans-serif, system-ui, sans-serif; background: transparent;">
+  <title>Transformer family overview</title>
+  <desc>Token embeddings plus positional information enter repeated Transformer blocks. The shared foundation then branches to encoder-only models, decoder-only models, and encoder-decoder models. Each branch states its attention pattern and typical output.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow-dash { to { stroke-dashoffset: -18; } }
+      .flow { stroke-dasharray: 6 4; animation: flow-dash 1.4s linear infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .flow { animation: none !important; }
+      }
+    </style>
+    <marker id="arrow-family" viewBox="0 0 10 10" refX="8" refY="5"
+      markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle"
+    style="font-size:16px; font-weight:600; fill:#888780;">One shared foundation, three common Transformer families</text>
+  <text x="440" y="50" text-anchor="middle"
+    style="font-size:11px; fill:#888780;">The block pattern stays familiar; the attention direction changes the model's natural job.</text>
+
+  <rect x="225" y="76" width="430" height="56" rx="10" fill="#F8F6F0" stroke="#D9D4C8" stroke-width="1"/>
+  <text x="440" y="99" text-anchor="middle" style="font-size:13px; font-weight:600; fill:#3D3C38;">Input representations</text>
+  <text x="440" y="118" text-anchor="middle" style="font-size:11px; fill:#888780;">token embeddings + positional information</text>
+
+  <line class="flow" x1="440" y1="132" x2="440" y2="158" stroke="#534AB7" stroke-width="1.4" marker-end="url(#arrow-family)"/>
+
+  <rect x="185" y="162" width="510" height="120" rx="12" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="440" y="191" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#26215C;">Repeated Transformer blocks</text>
+  <text x="440" y="212" text-anchor="middle" style="font-size:11px; fill:#534AB7;">attention mixes information across tokens</text>
+  <text x="440" y="232" text-anchor="middle" style="font-size:11px; fill:#534AB7;">FFN transforms each token • residual paths and normalization support depth</text>
+  <line x1="265" y1="252" x2="615" y2="252" stroke="#B9B6E5" stroke-width="1"/>
+  <text x="440" y="270" text-anchor="middle" style="font-size:10px; fill:#534AB7;">the exact arrangement can vary across architectures</text>
+
+  <line class="flow" x1="440" y1="282" x2="440" y2="316" stroke="#534AB7" stroke-width="1.4" marker-end="url(#arrow-family)"/>
+  <path d="M160 340 H720" fill="none" stroke="#B4B2A9" stroke-width="1.2"/>
+  <line x1="440" y1="316" x2="440" y2="340" stroke="#B4B2A9" stroke-width="1.2"/>
+  <line class="flow" x1="160" y1="340" x2="160" y2="362" stroke="#0F6E56" stroke-width="1.3" marker-end="url(#arrow-family)"/>
+  <line class="flow" x1="440" y1="340" x2="440" y2="362" stroke="#993C1D" stroke-width="1.3" marker-end="url(#arrow-family)"/>
+  <line class="flow" x1="720" y1="340" x2="720" y2="362" stroke="#534AB7" stroke-width="1.3" marker-end="url(#arrow-family)"/>
+
+  <rect x="35" y="366" width="250" height="154" rx="11" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text x="160" y="396" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#04342C;">Encoder-only</text>
+  <text x="160" y="419" text-anchor="middle" style="font-size:11px; fill:#0F6E56;">self-attention over the input</text>
+  <text x="160" y="440" text-anchor="middle" style="font-size:11px; fill:#0F6E56;">can use context on both sides</text>
+  <line x1="65" y1="458" x2="255" y2="458" stroke="#A8DCCB" stroke-width="1"/>
+  <text x="160" y="480" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#04342C;">Read and represent an input</text>
+  <text x="160" y="501" text-anchor="middle" style="font-size:10px; fill:#0F6E56;">BERT • RoBERTa</text>
+
+  <rect x="315" y="366" width="250" height="154" rx="11" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+  <text x="440" y="396" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#4A1B0C;">Decoder-only</text>
+  <text x="440" y="419" text-anchor="middle" style="font-size:11px; fill:#993C1D;">causal self-attention</text>
+  <text x="440" y="440" text-anchor="middle" style="font-size:11px; fill:#993C1D;">cannot use future tokens</text>
+  <line x1="345" y1="458" x2="535" y2="458" stroke="#EAC2B4" stroke-width="1"/>
+  <text x="440" y="480" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#4A1B0C;">Predict the next token</text>
+  <text x="440" y="501" text-anchor="middle" style="font-size:10px; fill:#993C1D;">GPT • Llama • Gemma</text>
+
+  <rect x="595" y="366" width="250" height="154" rx="11" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="720" y="396" text-anchor="middle" style="font-size:14px; font-weight:600; fill:#26215C;">Encoder-decoder</text>
+  <text x="720" y="419" text-anchor="middle" style="font-size:11px; fill:#534AB7;">encoder + causal decoder</text>
+  <text x="720" y="440" text-anchor="middle" style="font-size:11px; fill:#534AB7;">decoder cross-attends to input</text>
+  <line x1="625" y1="458" x2="815" y2="458" stroke="#B9B6E5" stroke-width="1"/>
+  <text x="720" y="480" text-anchor="middle" style="font-size:11px; font-weight:500; fill:#26215C;">Transform one sequence into another</text>
+  <text x="720" y="501" text-anchor="middle" style="font-size:10px; fill:#534AB7;">T5 • BART</text>
+
+  <text x="440" y="545" text-anchor="middle" style="font-size:10px; fill:#888780;">Architecture choice depends on the task and training objective; no family is universally best.</text>
+</svg>
