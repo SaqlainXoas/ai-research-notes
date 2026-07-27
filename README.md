@@ -38,25 +38,6 @@ The aim is depth over coverage: explain a concept clearly, connect it to the rel
 | [`experiments/`](experiments/) | Focused, reproducible experiments tied to a research question |
 | [`assets/`](assets/) | Diagrams used by the notes |
 
-## Study Paths
-
-```text
-Transformer foundations
-attention → positional information → residual paths → Transformer blocks
-          ↓
-  Attention Is All You Need paper study → architecture, mechanics, model families
-
-Neural retrieval
-bi-encoders → efficient candidate retrieval → cross-encoder reranking
-```
-
-## Writing Standards
-
-- Concept notes prioritize intuition, precise language, and links to the papers they support.
-- Paper studies record the research problem, method, evidence, limitations, and open questions.
-- Experiments state the research question, hypothesis, setup, controls, metrics, results, interpretation, limitations, and reproduction steps.
-- Results and completion claims are recorded only when they are supported by actual work.
-
 ## Status
 
 The Transformer and neural-retrieval foundations are actively documented. The experiments directory is intentionally a starting point: new experiments will be added only when they address a clear question from these notes.
