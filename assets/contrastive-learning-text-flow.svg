@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img"
+  style="font-family: ui-sans-serif, system-ui, sans-serif;">
+  <title>Contrastive training flow for text embeddings</title>
+  <desc>Anchor, positive, and hard-negative text cards are passed through copies of one shared encoder. The resulting vectors are compared, a contrastive loss is calculated, and the shared encoder is updated.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#57606A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x="8" y="8" width="744" height="484" rx="18" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="1.2"/>
+  <text x="380" y="45" text-anchor="middle" style="font-size:18px;font-weight:700;fill:#24292F;">Contrastive training turns text relationships into reusable vectors</text>
+  <text x="380" y="69" text-anchor="middle" style="font-size:13px;fill:#57606A;">The same encoder weights are used for every text; training updates that shared model.</text>
+
+  <rect x="34" y="104" width="180" height="68" rx="12" fill="#EAF1FF" stroke="#2563EB"/>
+  <text x="52" y="129" style="font-size:11px;font-weight:700;fill:#174EA6;">ANCHOR QUERY</text>
+  <text x="52" y="153" style="font-size:14px;font-weight:700;fill:#174EA6;">river bank erosion</text>
+  <rect x="34" y="216" width="180" height="68" rx="12" fill="#E6F6F0" stroke="#087660"/>
+  <text x="52" y="241" style="font-size:11px;font-weight:700;fill:#075B4A;">POSITIVE PASSAGE</text>
+  <text x="52" y="265" style="font-size:12px;fill:#075B4A;">soil loss along river edge</text>
+  <rect x="34" y="328" width="180" height="68" rx="12" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="52" y="353" style="font-size:11px;font-weight:700;fill:#8A4B00;">HARD NEGATIVE</text>
+  <text x="52" y="377" style="font-size:12px;fill:#8A4B00;">bank loan interest rates</text>
+
+  <path d="M214 138H267 M214 250H267 M214 362H267" fill="none" stroke="#57606A" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="275" y="95" width="183" height="86" rx="13" fill="#F0EAFF" stroke="#5A32A3" stroke-width="1.4"/>
+  <rect x="275" y="207" width="183" height="86" rx="13" fill="#F0EAFF" stroke="#5A32A3" stroke-width="1.4"/>
+  <rect x="275" y="319" width="183" height="86" rx="13" fill="#F0EAFF" stroke="#5A32A3" stroke-width="1.4"/>
+  <text x="366" y="130" text-anchor="middle" style="font-size:14px;font-weight:700;fill:#2D1B54;">Shared encoder</text>
+  <text x="366" y="152" text-anchor="middle" style="font-size:12px;fill:#5A32A3;">same learned weights</text>
+  <text x="366" y="242" text-anchor="middle" style="font-size:14px;font-weight:700;fill:#2D1B54;">Shared encoder</text>
+  <text x="366" y="264" text-anchor="middle" style="font-size:12px;fill:#5A32A3;">same learned weights</text>
+  <text x="366" y="354" text-anchor="middle" style="font-size:14px;font-weight:700;fill:#2D1B54;">Shared encoder</text>
+  <text x="366" y="376" text-anchor="middle" style="font-size:12px;fill:#5A32A3;">same learned weights</text>
+
+  <path d="M458 138H500 M458 250H500 M458 362H500" fill="none" stroke="#57606A" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <circle cx="525" cy="138" r="21" fill="#2563EB"/><circle cx="525" cy="250" r="21" fill="#16A34A"/><circle cx="525" cy="362" r="21" fill="#D97706"/>
+  <text x="555" y="143" style="font-size:13px;font-weight:700;fill:#174EA6;">anchor vector</text>
+  <text x="555" y="255" style="font-size:13px;font-weight:700;fill:#075B4A;">positive vector</text>
+  <text x="555" y="367" style="font-size:13px;font-weight:700;fill:#8A4B00;">negative vector</text>
+
+  <path d="M546 138 C590 142 592 196 615 215 M546 250H604 M546 362 C590 359 592 304 615 285" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <rect x="612" y="207" width="110" height="86" rx="13" fill="#F6F8FA" stroke="#8C959F" stroke-width="1.2"/>
+  <text x="667" y="235" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#24292F;">Compare</text>
+  <text x="667" y="257" text-anchor="middle" style="font-size:11px;fill:#57606A;">positive should</text>
+  <text x="667" y="273" text-anchor="middle" style="font-size:11px;fill:#57606A;">score higher</text>
+
+  <path d="M667 293V335" fill="none" stroke="#57606A" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="591" y="343" width="152" height="58" rx="13" fill="#FFF0EB" stroke="#B33A16" stroke-width="1.3"/>
+  <text x="667" y="367" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#8C2D12;">Contrastive loss</text>
+  <text x="667" y="386" text-anchor="middle" style="font-size:11px;fill:#8C2D12;">rank positive above negative</text>
+
+  <path d="M667 401 C658 452 473 460 405 414" fill="none" stroke="#B33A16" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+  <rect x="204" y="422" width="374" height="43" rx="12" fill="#EAF1FF" stroke="#2563EB"/>
+  <text x="391" y="440" text-anchor="middle" style="font-size:12px;font-weight:700;fill:#174EA6;">Backpropagation updates the one shared encoder</text>
+  <text x="391" y="456" text-anchor="middle" style="font-size:11px;fill:#174EA6;">Later, its independently created vectors can be indexed and searched.</text>
+</svg>

@@ -14,4 +14,5 @@ The goal here is to explain important topics clearly, build intuition, and conne
 | [`layer-normalization.md`](layer-normalization.md) | How are hidden features normalized independently at each token position? |
 | [`transformers.md`](transformers.md) | How do attention-based blocks build contextual token representations? |
 | [`embedding-models-and-bi-encoders.md`](embedding-models-and-bi-encoders.md) | How does an embedding model create a reusable vector for one text? |
+| [`contrastive-learning.md`](contrastive-learning.md) | How do positive and negative comparisons shape a useful embedding space? |
 | [`rerankers-and-cross-encoders.md`](rerankers-and-cross-encoders.md) | How does a reranker use joint text interaction to score a pair? |
