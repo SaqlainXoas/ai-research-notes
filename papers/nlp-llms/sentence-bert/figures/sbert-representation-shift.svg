@@ -9,7 +9,7 @@
 
   <rect width="760" height="500" fill="#F8F6F0"/>
   <text x="380" y="30" text-anchor="middle" font-size="16" font-weight="650" fill="#2C2A26">The architectural shift: score one pair or reuse sentence vectors</text>
-  <text x="380" y="52" text-anchor="middle" font-size="12" fill="#68655E">Both use a BERT-style encoder; the difference is whether the texts interact before or after encoding.</text>
+  <text x="380" y="52" text-anchor="middle" font-size="12" fill="#68655E">Both use BERT-style encoders; the difference is joint token interaction versus comparison of independently encoded vectors.</text>
 
   <rect x="24" y="76" width="340" height="358" rx="14" fill="#F1EFE8" stroke="#D9D4C8"/>
   <text x="194" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#633806">PAIRWISE BERT / CROSS-ENCODER</text>

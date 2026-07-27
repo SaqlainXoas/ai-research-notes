@@ -24,7 +24,7 @@
 
 BERT was already strong on sentence-pair tasks when both texts were passed through the model together. That is useful when a model needs to judge one known pair. It is a poor fit for searching a large collection, because every new pairing needs another joint BERT forward pass.
 
-The paper gives a concrete scale illustration. To find the most similar pair among 10,000 sentences, a pairwise BERT setup needs about 50 million pair evaluations. On the paper's stated V100 setup, the authors report roughly 65 hours for BERT/RoBERTa and roughly 5 seconds with SBERT after embeddings are available. These are historical measurements from that setup, not universal latency guarantees.
+The paper gives a concrete scale illustration. To find the most similar pair among 10,000 sentences, a pairwise BERT setup needs about 50 million pair evaluations. On the paper's stated V100 setup, the authors report roughly 65 hours for BERT/RoBERTa. With SBERT, computing the 10,000 sentence embeddings takes about 5 seconds, followed by roughly 0.01 seconds for the cosine-similarity comparisons. These are historical measurements from that setup, not universal latency guarantees.
 
 ## The One-Line Idea
 
@@ -135,7 +135,7 @@ SBERT's result is compelling because it keeps a strong pretrained encoder, then 
 
 ## How This Connects to Retrieval and Reranking
 
-The practical pattern is not “SBERT instead of cross-encoders.” It is often:
+A useful modern system pattern follows from this tradeoff, although this retrieve-then-rerank pipeline is not an experiment from the 2019 SBERT paper:
 
 ```text
 query
