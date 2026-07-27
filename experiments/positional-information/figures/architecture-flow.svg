@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Positional information ablation architecture flow</title>
+  <desc id="desc">Two Tiny Transformer flows differ only in whether learned position embeddings are added to token embeddings.</desc>
+  <defs>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+      .small { font: 14px Arial, sans-serif; fill: #334155; }
+      .box { stroke: #94a3b8; stroke-width: 2; rx: 12; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1000" height="520" fill="#f8fafc"/>
+  <text x="250" y="42" text-anchor="middle" class="title">WITH POSITION INFORMATION</text>
+  <text x="750" y="42" text-anchor="middle" class="title">WITHOUT POSITION INFORMATION</text>
+  <rect x="35" y="65" width="430" height="415" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <rect x="535" y="65" width="430" height="415" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="160" y="95" width="180" height="46" class="box" fill="#dbeafe"/><text x="250" y="124" text-anchor="middle" class="label">tokens</text>
+  <path d="M250 141 V165" class="arrow"/>
+  <rect x="130" y="170" width="240" height="54" class="box" fill="#dbeafe"/><text x="250" y="202" text-anchor="middle" class="label">token embeddings</text>
+  <rect x="130" y="250" width="240" height="54" class="box" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/><text x="250" y="282" text-anchor="middle" class="label">+ position embeddings</text>
+  <path d="M250 224 V245" class="arrow"/>
+  <path d="M250 304 V328" class="arrow"/>
+  <rect x="130" y="333" width="240" height="54" class="box" fill="#e0e7ff"/><text x="250" y="365" text-anchor="middle" class="label">one encoder block</text>
+  <path d="M250 387 V411" class="arrow"/>
+  <rect x="160" y="416" width="180" height="44" class="box" fill="#ede9fe"/><text x="250" y="444" text-anchor="middle" class="label">[CLS] → prediction</text>
+  <rect x="660" y="95" width="180" height="46" class="box" fill="#e2e8f0"/><text x="750" y="124" text-anchor="middle" class="label">tokens</text>
+  <path d="M750 141 V165" class="arrow"/>
+  <rect x="630" y="170" width="240" height="54" class="box" fill="#e2e8f0"/><text x="750" y="202" text-anchor="middle" class="label">token embeddings</text>
+  <path d="M750 224 V328" class="arrow"/>
+  <text x="750" y="278" text-anchor="middle" class="small">no positional-embedding table</text>
+  <rect x="630" y="333" width="240" height="54" class="box" fill="#e0e7ff"/><text x="750" y="365" text-anchor="middle" class="label">one encoder block</text>
+  <path d="M750 387 V411" class="arrow"/>
+  <rect x="660" y="416" width="180" height="44" class="box" fill="#ede9fe"/><text x="750" y="444" text-anchor="middle" class="label">[CLS] → prediction</text>
+  <text x="500" y="505" text-anchor="middle" class="small">All other data, architecture, optimizer, and training settings are held fixed.</text>
+</svg>

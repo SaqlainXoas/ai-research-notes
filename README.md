@@ -25,6 +25,7 @@ The current work follows three connected tracks:
 - [Attention Is All You Need](papers/nlp-llms/attention-is-all-you-need/) — a structured study of the original Transformer paper.
 - [Attention from scratch](experiments/attention-from-scratch/) — a runnable PyTorch walkthrough of Q/K/V projections, scaling, causal masking, and multi-head attention.
 - [Tiny encoder-only Transformer](experiments/tiny-transformer/) — a runnable one-block encoder classifier that learns whether `A` appears before `B`.
+- [Positional information ablation](experiments/positional-information/) — a five-seed controlled comparison of that classifier with and without learned positions.
 
 ### Representation learning and neural retrieval
 
@@ -43,7 +44,7 @@ The current work follows three connected tracks:
 
 ## Status
 
-The Transformer and neural-retrieval foundations are documented. The focused experiments move from [attention mechanics](experiments/attention-from-scratch/) to a complete [tiny encoder-only classifier](experiments/tiny-transformer/). Future experiments will be added only when they address a clear question from these notes.
+The Transformer and neural-retrieval foundations are documented. The focused experiments move from [attention mechanics](experiments/attention-from-scratch/) to a complete [tiny encoder-only classifier](experiments/tiny-transformer/), then use a [positional-information ablation](experiments/positional-information/) to test one component under controlled conditions. Future experiments will be added only when they address a clear question from these notes.
 
 ---
 

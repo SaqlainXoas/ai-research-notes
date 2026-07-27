@@ -1,0 +1,6 @@
+torch>=2.4
+matplotlib>=3.9
+pandas>=2.2
+ipykernel>=6.29
+nbclient>=0.10
+nbconvert>=7.16
